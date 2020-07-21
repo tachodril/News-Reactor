@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Listcenter from "./components/Listcenter";
+import Sidepanel from "./components/Sidepanel";
 
 class App extends Component {
   render() {
@@ -10,7 +11,14 @@ class App extends Component {
       <div className="App">
         <Header />
         <Navbar />
-        <Listcenter />
+        <div>
+          <div>
+            <Listcenter id="center-main" />
+          </div>
+          <div>
+            <Sidepanel id="side-main" />
+          </div>
+        </div>
       </div>
     );
   }

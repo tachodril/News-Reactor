@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   margin-top: 0;
+}
+
+#center-main {
+  width: 60%;
+  display: inline-block;
+}
+
+#side-main {
+  width: 40%;
+  display: inline-block;
 }

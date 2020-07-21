@@ -15,6 +15,7 @@
 
 #info {
   width: 40%;
+  margin: auto;
   margin-left: -40px;
   display: inline-block;
 }
