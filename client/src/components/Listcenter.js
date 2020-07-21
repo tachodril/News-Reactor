@@ -31,6 +31,7 @@ class Listcenter extends Component {
   render() {
     const posts = this.state.articles.map((article) => {
       const temp = {
+        author: article.author,
         title: article.title,
         imageurl: article.urlToImage,
         url: article.url,

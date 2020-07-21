@@ -1,0 +1,28 @@
+#whole-item {
+  margin: 20px;
+  font-family: fantasy;
+}
+
+#image-box {
+  width: 28%;
+  display: inline-block;
+}
+
+#image {
+  height: 200px;
+  width: 300px;
+}
+
+#info {
+  width: 40%;
+  margin-left: -40px;
+  display: inline-block;
+}
+
+#title {
+  font-family: fantasy;
+}
+
+#gap {
+  min-width: 50px;
+}
