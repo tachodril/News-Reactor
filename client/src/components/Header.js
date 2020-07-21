@@ -9,7 +9,7 @@ class Header extends Component {
           <h1 id="title-header">News Reactor</h1>
         </span>
         <span>
-          <h4 id="follow-text">Follow us on</h4>
+          <h4 id="follow-text">Follow us here</h4>
         </span>
       </div>
     );

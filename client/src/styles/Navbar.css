@@ -1,0 +1,20 @@
+#navbar {
+  border-bottom: 3px solid rgb(210, 210, 219);
+  min-height: 40px;
+  padding: 0px 48px;
+  background-color: whitesmoke;
+}
+
+#nav-item {
+  margin: 0px 40px;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: fantasy;
+  display: inline-block;
+  padding: 5px 27px;
+  background-color: whitesmoke;
+}
+
+#nav-item:hover {
+  border-bottom: 3px solid midnightblue;
+}
