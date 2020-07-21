@@ -4,7 +4,7 @@
 }
 
 #image-box {
-  width: 28%;
+  width: 32%;
   display: inline-block;
 }
 
@@ -14,9 +14,9 @@
 }
 
 #info {
-  width: 40%;
+  width: 50%;
   margin: auto;
-  margin-left: -40px;
+  margin-left: -15px;
   display: inline-block;
 }
 
@@ -24,6 +24,6 @@
   font-family: fantasy;
 }
 
-#gap {
+/* #gap {
   min-width: 50px;
-}
+} */

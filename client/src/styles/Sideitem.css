@@ -1,0 +1,33 @@
+#small-header {
+  flex-direction: row;
+  display: flex;
+}
+
+#trending-text {
+  width: 70%;
+  float: left;
+}
+
+#see-all {
+  text-decoration: underline;
+  cursor: pointer;
+  width: 30%;
+  text-align: right;
+  margin-right: 20px;
+  float: right;
+}
+
+#side-item {
+  flex-direction: row;
+  display: flex;
+}
+
+#side-image {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+#side-title {
+  display: inline-block;
+}

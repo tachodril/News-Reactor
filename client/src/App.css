@@ -1,17 +1,21 @@
+.App {
+  margin-top: 0;
+  font-family: fantasy;
+}
+
 * {
   box-sizing: border-box;
 }
 
-.App {
-  margin-top: 0;
+#data {
+  display: flex;
+  flex-direction: row;
 }
 
 #center-main {
-  width: 60%;
-  display: inline-block;
+  width: 66.667%;
 }
 
 #side-main {
-  width: 40%;
-  display: inline-block;
+  width: 33.33%;
 }
