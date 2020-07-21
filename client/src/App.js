@@ -12,11 +12,11 @@ class App extends Component {
         <Header />
         <Navbar />
         <div id="data">
-          <div>
-            <Listcenter id="center-main" />
+          <div id="center-main">
+            <Listcenter />
           </div>
-          <div>
-            <Sidepanel id="side-main" />
+          <div id="side-main">
+            <Sidepanel />
           </div>
         </div>
       </div>

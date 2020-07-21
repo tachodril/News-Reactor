@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Listcenteritem.css";
+import calendericon from "../cal.png";
+import authoricon from "../author.png";
 
 class Listcenteritem extends Component {
   constructor(props) {
@@ -20,13 +22,15 @@ class Listcenteritem extends Component {
           <img id="image" src={this.state.imageurl} />
         </div>
         <div id="info">
-          <h2 id="title">{this.state.title}</h2>
+          <h3 id="title">{this.state.title}</h3>
           <div>
-            <h4>
+            <p>
+              <img id="cal-icon" src={calendericon}></img>
               {this.state.time}
               <span id="gap"></span>
+              <img id="cal-icon" src={authoricon}></img>
               {this.state.author}
-            </h4>
+            </p>
           </div>
           <p>{this.state.description}</p>
         </div>

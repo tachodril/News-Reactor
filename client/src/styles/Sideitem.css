@@ -1,3 +1,7 @@
+#full-item {
+  margin-top: 60px;
+}
+
 #small-header {
   flex-direction: row;
   display: flex;
@@ -18,16 +22,18 @@
 }
 
 #side-item {
+  margin-bottom: 20px;
   flex-direction: row;
   display: flex;
 }
 
 #side-image {
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 110px;
 }
 
 #side-title {
+  margin-left: 10px;
   display: inline-block;
 }

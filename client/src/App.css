@@ -8,14 +8,16 @@
 }
 
 #data {
+  margin-left: 40px;
+  margin-right: 40px;
   display: flex;
   flex-direction: row;
 }
 
 #center-main {
-  width: 66.667%;
+  width: 75%;
 }
 
 #side-main {
-  width: 33.33%;
+  width: 25%;
 }

@@ -37,7 +37,7 @@ class Sideitem extends Component {
       return <div></div>;
     } else {
       return (
-        <div>
+        <div id="full-item">
           <div id="small-header">
             <h2 id="trending-text">Trending Clicks</h2>
             <h4 id="see-all">See all</h4>
