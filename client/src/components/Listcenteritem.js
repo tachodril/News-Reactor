@@ -13,13 +13,16 @@ import CardContent from "@material-ui/core/CardContent";
 class Listcenteritem extends Component {
   constructor(props) {
     super(props);
+
+    const time = new Date(props.data.time).toUTCString();
+
     this.state = {
       over: false,
       author: props.data.author,
       title: props.data.title,
       imageurl: props.data.imageurl,
       url: props.data.url,
-      time: props.data.time,
+      time: time,
       description: props.data.description,
     };
     this.toggleOver = this.toggleOver.bind(this);
@@ -41,42 +44,48 @@ class Listcenteritem extends Component {
     );
     return (
       <div id="whole-item">
-        <Card
-          onMouseOver={this.toggleOver}
-          onMouseOut={this.toggleOver}
-          raised={this.state.over}
+        <a
+          style={{ textDecoration: "None" }}
+          href={this.state.url}
+          target="_blank"
         >
-          <CardContent>
-            <Container>
-              <Row>
-                <Col sm={4}>
-                  <div id="image-box">
-                    <img
-                      id="image"
-                      placeholder={noimage}
-                      src={this.state.imageurl}
-                    />
-                  </div>
-                </Col>
-                <Col sm={8}>
-                  <div id="info">
-                    <h4 id="title">{this.state.title}</h4>
-                    <div>
-                      <p id="temp">
-                        <img id="cal-icon" src={calendericon}></img>
-                        {this.state.time}
-                        <span id="gap"></span>
-                        {temp}
-                        {this.state.author}
-                      </p>
+          <Card
+            onMouseOver={this.toggleOver}
+            onMouseOut={this.toggleOver}
+            raised={this.state.over}
+          >
+            <CardContent>
+              <Container>
+                <Row>
+                  <Col sm={4}>
+                    <div id="image-box">
+                      <img
+                        id="image"
+                        placeholder={noimage}
+                        src={this.state.imageurl}
+                      />
                     </div>
-                    <p>{this.state.description}</p>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </CardContent>
-        </Card>
+                  </Col>
+                  <Col sm={8}>
+                    <div id="info">
+                      <h4 id="title">{this.state.title}</h4>
+                      <div>
+                        <p id="temp">
+                          <img id="cal-icon" src={calendericon}></img>
+                          {this.state.time}
+                          <span id="gap"></span>
+                          {temp}
+                          {this.state.author}
+                        </p>
+                      </div>
+                      <p>{this.state.description}</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </CardContent>
+          </Card>
+        </a>
       </div>
     );
   }

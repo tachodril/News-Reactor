@@ -39,7 +39,7 @@ class Sideitem extends Component {
       return (
         <div id="full-item">
           <div id="small-header">
-            <h3 id="trending-text">Trending Clicks</h3>
+            <h5 id="trending-text">Trending Clicks</h5>
             <h6 id="see-all">See all</h6>
           </div>
           {items}

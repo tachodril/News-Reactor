@@ -26,7 +26,13 @@
 }
 
 #title {
-  font-family: fantasy;
+  font-family: Open Sans Bold;
+  text-decoration: solid;
+}
+
+#title:hover {
+  color: rgb(8, 8, 73);
+  font-family: Open Sans Bold;
   text-decoration: solid;
 }
 

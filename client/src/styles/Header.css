@@ -24,3 +24,12 @@
   font-family: fantasy;
   color: white;
 }
+
+#img {
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 80px;
+  width: 30px;
+  height: 30px;
+}

@@ -10,7 +10,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Navbar />
+        <div hide-desktop foo collapse navbar-collapse>
+          <Navbar />
+        </div>
         <div id="data">
           <div id="center-main">
             <Listcenter />

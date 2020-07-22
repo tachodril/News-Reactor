@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/OpenSans-Light.ttf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "Open Sans Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/OpenSans-Bold.ttf"); /* IE9 Compat Modes */
+}
+
 .App {
   margin-top: 0;
   font-family: fantasy;
