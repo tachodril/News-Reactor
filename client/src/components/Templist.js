@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "../styles/Listcenteritem.css";
+import "../styles/Templist.css";
 import calendericon from "../cal.png";
 import authoricon from "../author.png";
 
 import { Grid, Col, Row, Container } from "react-bootstrap";
 
-class Listcenteritem extends Component {
+class Templist extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,4 +53,4 @@ class Listcenteritem extends Component {
     );
   }
 }
-export default Listcenteritem;
+export default Templist;

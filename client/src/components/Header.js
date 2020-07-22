@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <div id="header">
         <span>
-          <h1 id="title-header">News Reactor</h1>
+          <h2 id="title-header">News Reactor</h2>
         </span>
         <span>
           <h4 id="follow-text">Follow us here</h4>
