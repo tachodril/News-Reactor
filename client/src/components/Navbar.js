@@ -15,7 +15,7 @@ class Navbar extends Component {
               <h2 id="nav-item">World</h2>
             </Col>
             <Col>
-              <h2 id="nav-item">Politics</h2>
+              <h2 id="nav-item">Business</h2>
             </Col>
             <Col>
               <h2 id="nav-item">Entertainment</h2>
@@ -25,6 +25,12 @@ class Navbar extends Component {
             </Col>
             <Col>
               <h2 id="nav-item">Science</h2>
+            </Col>
+            <Col>
+              <h2 id="nav-item">Health</h2>
+            </Col>
+            <Col>
+              <h2 id="nav-item">Technology</h2>
             </Col>
           </Row>
         </Container>

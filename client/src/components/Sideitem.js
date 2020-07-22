@@ -14,7 +14,7 @@ class Sideitem extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://newsapi.org/v2/top-headlines?country=us&language=en&category=general&pageSize=8&apiKey=37fb26157b3b48dd80f9ef8a891e1374"
+        "https://newsapi.org/v2/top-headlines?country=us&language=en&category=general&pageSize=6&apiKey=37fb26157b3b48dd80f9ef8a891e1374"
       )
       .then((res) => {
         this.setState({
@@ -26,10 +26,12 @@ class Sideitem extends Component {
   render() {
     const items = this.state.posts.map((post) => {
       return (
-        <div id="side-item">
-          <img id="side-image" src={post.urlToImage}></img>
-          <h6 id="side-title">{post.title}</h6>
-        </div>
+        <a style={{}} href={post.url} target="_blank">
+          <div id="side-item">
+            <img id="side-image" src={post.urlToImage}></img>
+            <h6 id="side-title">{post.title}</h6>
+          </div>
+        </a>
       );
     });
 

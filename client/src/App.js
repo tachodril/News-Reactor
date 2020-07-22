@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div hide-desktop foo collapse navbar-collapse>
+        <div id="toolbar">
           <Navbar />
         </div>
         <div id="data">

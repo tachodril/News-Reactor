@@ -38,11 +38,7 @@ class Listcenter extends Component {
         time: article.publishedAt,
         description: article.description,
       };
-      return (
-        <div>
-          <Listcenteritem data={temp} />
-        </div>
-      );
+      return <Listcenteritem data={temp} />;
     });
 
     if (this.state.isLoaded === true) {

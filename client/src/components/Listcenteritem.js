@@ -17,6 +17,7 @@ class Listcenteritem extends Component {
     const time = new Date(props.data.time).toUTCString();
 
     this.state = {
+      titleColor: "black",
       over: false,
       author: props.data.author,
       title: props.data.title,
@@ -31,8 +32,10 @@ class Listcenteritem extends Component {
   toggleOver() {
     var flag = this.state.over;
     flag = !flag;
+    var color = flag ? "blue" : "black";
     this.setState({
       over: flag,
+      titleColor: color,
     });
   }
 
@@ -42,6 +45,8 @@ class Listcenteritem extends Component {
     ) : (
       <div></div>
     );
+
+    const curColor = this.state.titleColor;
     return (
       <div id="whole-item">
         <a
@@ -68,7 +73,9 @@ class Listcenteritem extends Component {
                   </Col>
                   <Col sm={8}>
                     <div id="info">
-                      <h4 id="title">{this.state.title}</h4>
+                      <h4 style={{ color: { curColor } }} id="title">
+                        {this.state.title}
+                      </h4>
                       <div>
                         <p id="temp">
                           <img id="cal-icon" src={calendericon}></img>
