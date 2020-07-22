@@ -8,6 +8,7 @@
 }
 
 #image {
+  border-radius: 15px;
   height: 150px;
   width: 250px;
 }

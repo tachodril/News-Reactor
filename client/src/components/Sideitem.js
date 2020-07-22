@@ -28,7 +28,7 @@ class Sideitem extends Component {
       return (
         <div id="side-item">
           <img id="side-image" src={post.urlToImage}></img>
-          <h3 id="side-title">{post.title}</h3>
+          <h6 id="side-title">{post.title}</h6>
         </div>
       );
     });
@@ -39,8 +39,8 @@ class Sideitem extends Component {
       return (
         <div id="full-item">
           <div id="small-header">
-            <h2 id="trending-text">Trending Clicks</h2>
-            <h4 id="see-all">See all</h4>
+            <h3 id="trending-text">Trending Clicks</h3>
+            <h6 id="see-all">See all</h6>
           </div>
           {items}
         </div>
