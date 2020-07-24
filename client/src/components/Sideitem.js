@@ -8,6 +8,15 @@ import CardContent from "@material-ui/core/CardContent";
 import { connect } from "react-redux";
 
 class Sideitem extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSeeAll = this.handleSeeAll.bind(this);
+  }
+  handleSeeAll() {
+    var x = this.props.category;
+    this.props.changeTab(x);
+  }
+
   render() {
     const items = this.props.articles.map((post) => {
       return (
@@ -29,7 +38,9 @@ class Sideitem extends Component {
             <CardContent>
               <div id="small-header">
                 <h5 id="trending-text">Trending Clicks</h5>
-                <h6 id="see-all">See all</h6>
+                <h6 onClick={this.handleSeeAll} id="see-all">
+                  See all
+                </h6>
               </div>
               {items}
             </CardContent>
@@ -65,4 +76,12 @@ const matchStateToProps = (state, ownprops) => {
   };
 };
 
-export default connect(matchStateToProps)(Sideitem);
+const matchDispatchToProps = (dispatch) => {
+  return {
+    changeTab: (newTab) => {
+      dispatch({ type: "CHANGE_TAB", newTab: newTab });
+    },
+  };
+};
+
+export default connect(matchStateToProps, matchDispatchToProps)(Sideitem);
