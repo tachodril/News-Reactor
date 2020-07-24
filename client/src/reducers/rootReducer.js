@@ -30,7 +30,6 @@ const initState = {
 const rootReducer = (state = initState, action) => {
   if (action.type === "CHANGE_TAB") {
     const newTab = action.newTab;
-    console.log("seek kabab " + newTab);
     return {
       ...state,
       curTab: newTab,

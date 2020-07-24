@@ -11,8 +11,6 @@ class Navbar extends Component {
   }
 
   handleClcik(tab) {
-    //console.log("vivz if quality " + tab);
-
     this.props.changeTab(tab);
   }
 

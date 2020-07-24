@@ -48,11 +48,11 @@ class Listcenter extends Component {
     var flags = [];
     flags = this.props.isLoaded;
     var flag = flags[this.props.curTab];
-    if (!flag) {
+
+    if (flag === false) {
       this.fetchNewsFunction(this.props.curTab);
     }
 
-    console.log("tab props " + this.props.curTab);
     const posts = this.props.articles.map((article) => {
       const temp = {
         author: article.author,
@@ -82,8 +82,9 @@ class Listcenter extends Component {
 const mapStateToProps = (state) => {
   var posts;
   var tab = state.curTab;
+
   if (tab === 0) {
-    posts = state.articles1;
+    posts = [...state.articles1];
   } else if (tab === 1) {
     posts = state.articles2;
   } else if (tab === 2) {

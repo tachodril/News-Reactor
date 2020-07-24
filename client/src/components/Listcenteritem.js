@@ -16,49 +16,31 @@ class Listcenteritem extends Component {
 
     const time = new Date(props.data.time).toUTCString();
 
-    this.state = {
-      titleColor: "black",
-      over: false,
-      author: props.data.author,
-      title: props.data.title,
-      imageurl: props.data.imageurl,
-      url: props.data.url,
-      time: time,
-      description: props.data.description,
-    };
-    this.toggleOver = this.toggleOver.bind(this);
-  }
-
-  toggleOver() {
-    var flag = this.state.over;
-    flag = !flag;
-    var color = flag ? "blue" : "black";
-    this.setState({
-      over: flag,
-      titleColor: color,
-    });
+    // this.state = {
+    //   author: props.data.author,
+    //   title: props.data.title,
+    //   imageurl: props.data.imageurl,
+    //   url: props.data.url,
+    //   time: time,
+    //   description: props.data.description,
+    // };
   }
 
   render() {
-    const temp = this.state.author ? (
+    const temp = this.props.data.author ? (
       <img id="cal-icon" src={authoricon}></img>
     ) : (
       <div></div>
     );
 
-    const curColor = this.state.titleColor;
     return (
       <div id="whole-item">
         <a
           style={{ textDecoration: "None" }}
-          href={this.state.url}
+          href={this.props.data.url}
           target="_blank"
         >
-          <Card
-            onMouseOver={this.toggleOver}
-            onMouseOut={this.toggleOver}
-            raised={this.state.over}
-          >
+          <Card>
             <CardContent>
               <Container>
                 <Row>
@@ -67,25 +49,23 @@ class Listcenteritem extends Component {
                       <img
                         id="image"
                         placeholder={noimage}
-                        src={this.state.imageurl}
+                        src={this.props.data.imageurl}
                       />
                     </div>
                   </Col>
                   <Col sm={8}>
                     <div id="info">
-                      <h4 style={{ color: { curColor } }} id="title">
-                        {this.state.title}
-                      </h4>
+                      <h4 id="title">{this.props.data.title}</h4>
                       <div>
                         <p id="temp">
                           <img id="cal-icon" src={calendericon}></img>
-                          {this.state.time}
+                          {this.props.data.time}
                           <span id="gap"></span>
                           {temp}
-                          {this.state.author}
+                          {this.props.data.author}
                         </p>
                       </div>
-                      <p>{this.state.description}</p>
+                      <p>{this.props.data.description}</p>
                     </div>
                   </Col>
                 </Row>
