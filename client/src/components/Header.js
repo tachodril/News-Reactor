@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../styles/Header.css";
 import github from "../icons/github.svg";
 import twitter from "../icons/twitter.svg";
-import instagram from "../icons/instagram-80.png";
+import instagram from "../icons/instagram.svg";
 
 class Header extends Component {
   render() {
@@ -13,7 +13,14 @@ class Header extends Component {
         </span>
         <span>
           <h4 id="follow-text">
-            Follow us here<img id="img" src={github}></img>
+            Follow us here
+            <a
+              style={{}}
+              href={"https://github.com/tachodril/News-Reactor.git"}
+              target="_blank"
+            >
+              <img id="img" src={github}></img>
+            </a>
             <img id="img" src={twitter}></img>
             <img id="img" src={instagram}></img>
           </h4>
