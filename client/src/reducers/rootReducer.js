@@ -28,24 +28,18 @@ const initState = {
 };
 
 const rootReducer = (state = initState, action) => {
-  if (action.type === "FETCH_ARTICLES") {
+  if (action.type === "CHANGE_TAB") {
+    const newTab = action.newTab;
+    console.log("seek kabab " + newTab);
+    return {
+      ...state,
+      curTab: newTab,
+    };
+  } else if (action.type === "FETCH_ARTICLES") {
     var curCat = action.cat;
 
     var flags = state.isLoaded;
     flags[curCat] = true;
-    // const ind = state.curTab;
-    // console.log("heyy " + flags);
-
-    // var posts = [];
-
-    // axios.get(action.url).then((res) => {
-    //   console.log(res.data);
-
-    //   flags[ind] = true;
-    //   posts = res.data.articles;
-    // });
-
-    // console.log("level " + posts);
 
     if (curCat === 0) {
       return {
