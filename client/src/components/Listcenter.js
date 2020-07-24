@@ -14,28 +14,28 @@ class Listcenter extends Component {
     var catUrl = "";
     if (cat === 0) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 1) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?sources=bbc-news&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?sources=bbc-news&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 2) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&category=business&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&category=business&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 3) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 4) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&category=sports&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&category=sports&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 5) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&category=science&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&category=science&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 6) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&category=health&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&category=health&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     } else if (cat === 7) {
       catUrl =
-        "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=18&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+        "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=15&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
     }
     var posts = [];
     axios.get(catUrl).then((res) => {
@@ -52,6 +52,23 @@ class Listcenter extends Component {
     if (flag === false) {
       this.fetchNewsFunction(this.props.curTab);
     }
+
+    const MapCenterSide = {
+      0: [1, 2, 3, 4],
+      1: [5, 2, 3, 4],
+      2: [1, 5, 3, 4],
+      3: [1, 2, 6, 4],
+      4: [1, 2, 3, 7],
+      5: [1, 6, 3, 4],
+      6: [1, 2, 3, 4],
+      7: [1, 2, 3, 4],
+    };
+
+    MapCenterSide[this.props.curTab].map((x) => {
+      if (flags[x] === false) {
+        this.fetchNewsFunction(x);
+      }
+    });
 
     const posts = this.props.articles.map((article) => {
       const temp = {
