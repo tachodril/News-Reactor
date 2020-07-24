@@ -65,17 +65,15 @@ class Listcenter extends Component {
       return <Listcenteritem data={temp} />;
     });
 
-    return <div>{posts}</div>;
-
-    // if (this.state.isLoaded === true) {
-    //   return <div>{posts}</div>;
-    // } else {
-    //   return (
-    //     <div className="center">
-    //       <h2 style={{ textAlign: "center" }}>Loading, please wait...</h2>
-    //     </div>
-    //   );
-    // }
+    if (flag === true) {
+      return <div>{posts}</div>;
+    } else {
+      return (
+        <div className="center">
+          <h2 style={{ textAlign: "center" }}>Loading, please wait...</h2>
+        </div>
+      );
+    }
   }
 }
 

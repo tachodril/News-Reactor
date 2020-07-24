@@ -4,26 +4,42 @@ import calendericon from "../cal.png";
 import authoricon from "../author.png";
 import noimage from "../noImage.png";
 
-import { Grid, Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
 class Listcenteritem extends Component {
   constructor(props) {
     super(props);
 
-    const time = new Date(props.data.time).toUTCString();
+    this.state = {
+      raised: false,
+      titleStyle: { fontFamily: "Open Sans Bold" },
+    };
+    this.getTime = this.getTime.bind(this);
+    this.changeTitleStyle = this.changeTitleStyle.bind(this);
+  }
 
-    // this.state = {
-    //   author: props.data.author,
-    //   title: props.data.title,
-    //   imageurl: props.data.imageurl,
-    //   url: props.data.url,
-    //   time: time,
-    //   description: props.data.description,
-    // };
+  changeTitleStyle(id) {
+    var temp = {};
+    var flag;
+    if (id === 0) {
+      flag = false;
+      temp = { fontFamily: "Open Sans Bold" };
+    } else {
+      flag = true;
+      temp = {
+        color: "rgb(8, 8, 73)",
+        fontFamily: "Open Sans Bold",
+        textDecoration: "underline",
+      };
+    }
+    this.setState({ raised: flag, titleStyle: temp });
+  }
+
+  getTime() {
+    return new Date(this.props.data.time).toUTCString();
   }
 
   render() {
@@ -40,7 +56,11 @@ class Listcenteritem extends Component {
           href={this.props.data.url}
           target="_blank"
         >
-          <Card>
+          <Card
+            onMouseEnter={() => this.changeTitleStyle(1)}
+            onMouseLeave={() => this.changeTitleStyle(0)}
+            raised={this.state.raised}
+          >
             <CardContent>
               <Container>
                 <Row>
@@ -55,11 +75,13 @@ class Listcenteritem extends Component {
                   </Col>
                   <Col sm={8}>
                     <div id="info">
-                      <h4 id="title">{this.props.data.title}</h4>
+                      <h4 style={this.state.titleStyle}>
+                        {this.props.data.title}
+                      </h4>
                       <div>
                         <p id="temp">
                           <img id="cal-icon" src={calendericon}></img>
-                          {this.props.data.time}
+                          {this.getTime()}
                           <span id="gap"></span>
                           {temp}
                           {this.props.data.author}

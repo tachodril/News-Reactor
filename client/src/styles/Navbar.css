@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-#nav-item {
+/* .nav-item {
   height: 100%;
   cursor: pointer;
   border-bottom: 3px solid rgb(235, 235, 240);
@@ -19,6 +19,6 @@
   background-color: whitesmoke;
 }
 
-#nav-item:hover {
+.nav-item:hover {
   border-bottom: 3px solid midnightblue;
-}
+} */
