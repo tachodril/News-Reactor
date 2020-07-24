@@ -13,8 +13,7 @@ class Header extends Component {
         </span>
         <span>
           <h4 id="follow-text">
-            Follow us here
-            <img id="img" src={github}></img>
+            Follow us here<img id="img" src={github}></img>
             <img id="img" src={twitter}></img>
             <img id="img" src={instagram}></img>
           </h4>

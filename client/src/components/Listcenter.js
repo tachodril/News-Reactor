@@ -1,13 +1,32 @@
 import React, { Component } from "react";
 import Listcenteritem from "./Listcenteritem";
 import { connect } from "react-redux";
+import axios from "axios";
 
 class Listcenter extends Component {
   constructor(props) {
     super(props);
+
+    var flags = [];
+    flags = props.isLoaded;
+    var flag = flags[props.curTab];
+    if (!flag) {
+      var catUrl = "";
+      if (props.curTab === 0) {
+        catUrl =
+          "https://newsapi.org/v2/top-headlines?country=in&apiKey=37fb26157b3b48dd80f9ef8a891e1374";
+      }
+      var posts = [];
+      axios.get(catUrl).then((res) => {
+        posts = res.data.articles;
+        props.fetchArticles(posts);
+      });
+    }
   }
 
   render() {
+    console.log("props " + this.props);
+
     const posts = this.props.articles.map((article) => {
       const temp = {
         author: article.author,
@@ -36,8 +55,18 @@ class Listcenter extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    articles: state.articles,
+    articles: state.articles1,
+    curTab: state.curTab,
+    isLoaded: state.isLoaded,
   };
 };
 
-export default connect(mapStateToProps)(Listcenter);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchArticles: (articles) => {
+      dispatch({ type: "FETCH_ARTICLES", articles: articles });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Listcenter);
